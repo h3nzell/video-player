@@ -1,0 +1,8 @@
+@import "styles/colors";
+@import "styles/vars";
+
+.wrapper {
+    height: 100%;
+    background-color: $secondary-1200;
+    @extend %flex-center
+}

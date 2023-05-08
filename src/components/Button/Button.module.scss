@@ -1,0 +1,39 @@
+@import "styles/vars";
+@import "styles/colors";
+@import "styles/mixins";
+@import "styles/typography";
+
+.button {
+  gap: 8px;
+  width: 100%;
+  padding: 5px;
+  border-radius: 8px;
+  white-space: nowrap;
+  transition: all 0.5s;
+  @extend %body2-sb;
+  @extend %button-text;
+  @extend %flex-center;
+  color: $secondary-1500;
+  background-color: $secondary-600;
+  border: 1px solid $secondary-600;
+
+  @include svgFill($secondary-1500, 20px);
+
+  &:hover {
+    color: white;
+    background-color: $secondary-800;
+    border: 1px solid $secondary-800;
+
+    @include svgFill(white)
+  }
+
+  &:disabled {
+    color: $secondary-1200;
+    background-color: $secondary-300;
+    @include svgFill($secondary-1200);
+  }
+
+  &:focus {
+    border: 1px solid $primary-600;
+  }
+}

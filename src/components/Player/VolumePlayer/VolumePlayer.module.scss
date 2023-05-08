@@ -1,0 +1,50 @@
+@import 'styles/vars';
+@import 'styles/colors';
+@import 'styles/mixins';
+
+.volume {
+  position: relative;
+  @extend %flex-column;
+
+  &__range {
+    opacity: 0;
+    right: -49px;
+    bottom: 92px;
+    position: absolute;
+    transition: all 0.5s;
+    transform: rotate(-90deg) translateX(-50%) scaleX(0);
+  }
+
+  &__tick {
+    top: 5px;
+    left: 6px;
+    height: 4px;
+    width: 24px;
+    cursor: pointer;
+    position: absolute;
+    border-radius: 2px;
+    transition: all 0.4s;
+    transform-origin: left;
+    background-color: $secondary-1500;
+    transform: rotate(45deg) ScaleX(0);
+
+    &__muted {
+      transform: rotate(45deg) ScaleX(1);
+    }
+  }
+
+  &:hover &__range,
+  &__active {
+    opacity: 1;
+    transform: rotate(-90deg) translateX(0);
+  }
+
+  &:hover {
+    transition: all 0.4s;
+    @include svgFill(#ffffff !important);
+
+    > div {
+      background-color: #ffffff;
+    }
+  }
+}
